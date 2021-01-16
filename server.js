@@ -5,6 +5,7 @@ const colors = require("colors");
 const connectDB = require("./config/db");
 
 const htmlRoutes = require("./routes/htmlRoutes");
+const workoutRoutes = require("./routes/workoutRoutes");
 
 // Load env vars
 dotenv.config({ path: "./config/config.env" });
@@ -26,6 +27,7 @@ if (process.env.NODE_ENV === "development") {
 
 // Routers
 app.use("/", htmlRoutes);
+app.use("/api/workouts", workoutRoutes);
 
 const server = app.listen(
   PORT,
