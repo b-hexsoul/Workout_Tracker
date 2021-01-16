@@ -4,6 +4,8 @@ const morgan = require("morgan");
 const colors = require("colors");
 const connectDB = require("./config/db");
 
+const htmlRoutes = require("./routes/htmlRoutes");
+
 // Load env vars
 dotenv.config({ path: "./config/config.env" });
 const PORT = process.env.PORT || 5000;
@@ -13,13 +15,17 @@ const app = express();
 // Connect to DB
 connectDB();
 
-// Body Parser
+// Body Parser & static
 app.use(express.json());
+app.use(express.static(__dirname + "/public"));
 
 // Dev logging middleware
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+
+// Routers
+app.use("/", htmlRoutes);
 
 const server = app.listen(
   PORT,
