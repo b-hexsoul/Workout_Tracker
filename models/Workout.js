@@ -13,6 +13,7 @@ const ExerciseSchema = new mongoose.Schema({
 const WorkoutSchema = new mongoose.Schema({
   day: {
     type: Date,
+    default: Date.now,
   },
   exercises: [
     {
