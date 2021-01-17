@@ -4,7 +4,14 @@ const db = require("../models/index");
 exports.getLastWorkout = async (req, res, next) => {
   console.log("getting workouts");
   try {
-    const workouts = await db.Workout.find();
+    // All documents enter aggregation pipeline and totalDuration is set as a field
+    const workouts = await db.Workout.aggregate([
+      {
+        $set: {
+          totalDuration: { $sum: "$exercises.duration" },
+        },
+      },
+    ]);
 
     res.status(200).json({
       success: true,
