@@ -5,12 +5,13 @@ exports.getLastWorkout = async (req, res, next) => {
   console.log("getting workouts");
   try {
     const workouts = await db.Workout.find();
-    console.log(workouts);
+
     res.status(200).json({
       success: true,
       data: workouts,
     });
   } catch (error) {
+    // Send error response code and data
     res.status(400).json({
       success: false,
       error: error.message,
@@ -20,6 +21,20 @@ exports.getLastWorkout = async (req, res, next) => {
 
 exports.createWorkout = async (req, res, next) => {
   console.log("creating a workout");
+  try {
+    const workout = db.Workout.create(req.body);
+
+    res.status(200).json({
+      success: true,
+      data: workout,
+    });
+  } catch (error) {
+    // Send error response code and data
+    res.status(400).json({
+      success: false,
+      error: error.message,
+    });
+  }
 };
 
 exports.addExercise = async (req, res, next) => {
