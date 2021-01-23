@@ -32,7 +32,7 @@
 
 ## About The Project
 
-This project is the 12th HW project in UW Full Stack Bootcamp. This application is a Command Line Interface (CLI) that is connected to a MySQL database with multiple tables. This application required me to build schema for the database and use Inquirer and MySQL Node packages to create the CLI.
+This project utilizes an MVC design pattern with MongoDB, Mongoose ODM, and Express, allowing the user to log a workout with multiple exercises. The total duration of a workout is return using the mongodb aggregation pipeline.
 
 ## User Story
 
@@ -42,9 +42,9 @@ So that I can organize and plan my business
 
 ### Built With
 
-- [MySQL](https://www.npmjs.com/package/mysql)
-- [InquirerJs](https://www.npmjs.com/package/inquirer)
-- [console.table](https://www.npmjs.com/package/console.table)
+- [MongoDB]
+- [Mongoose ODM]
+- [Express]
 
 <!-- GETTING STARTED -->
 
