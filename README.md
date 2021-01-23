@@ -34,12 +34,6 @@
 
 This project utilizes an MVC design pattern with MongoDB, Mongoose ODM, and Express, allowing the user to log a workout with multiple exercises. The total duration of a workout is return using the mongodb aggregation pipeline.
 
-## User Story
-
-As a business owner
-I want to be able to view and manage the departments, roles, and employees in my company
-So that I can organize and plan my business
-
 ### Built With
 
 - [MongoDB]
